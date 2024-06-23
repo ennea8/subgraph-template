@@ -1,9 +1,11 @@
 {
-  "name": "dexes",
+  "name": "subgraph-template",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
-    "build": "graph build",
+    "build": "npm run build:dexes",
+    "prebuild:dexes":"node scripts/prepare.js",
+    "build:dexes": "graph build",
     "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ dexes",
     "create-local": "graph create --node http://localhost:8020/ dexes",
     "remove-local": "graph remove --node http://localhost:8020/ dexes",
@@ -12,7 +14,11 @@
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.76.0",
-    "@graphprotocol/graph-ts": "0.32.0"
+    "@graphprotocol/graph-ts": "0.32.0",
+    "env-cmd": "^10.1.0",
+    "mustache": "^4.2.0"
   },
-  "devDependencies": { "matchstick-as": "0.5.0" }
+  "devDependencies": {
+    "matchstick-as": "0.5.0"
+  }
 }
