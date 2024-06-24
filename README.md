@@ -13,7 +13,7 @@ This template allows for the dynamic generation of subgraph.yaml and provides fl
 
 ```bash
 
-env-cmd -e dev:any_module_name npm run build
-env-cmd -e dev:any_module_name npm run deploy
+env-cmd -e dev:dexes npm run build
+env-cmd -e dev:dexes npm run deploy
 
 ```
